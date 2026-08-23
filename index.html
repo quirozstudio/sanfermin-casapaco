@@ -1,13 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Casa Paco | Menú fin de semana</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Menú del día y fin de semana en Pamplona | Casa Paco</title>
     <meta
       name="description"
-      content="Menú fin de semana de Casa Paco Gastrobar en Pamplona. Primeros, segundos y postres con bebida incluida."
+      content="Descubre el menú del día y el menú de fin de semana de Casa Paco, gastrobar de cocina navarra en el centro de Pamplona. Precios, platos y alérgenos."
     />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="Casa Paco" />
+    <meta name="geo.region" content="ES-NA" />
+    <meta name="geo.placename" content="Pamplona" />
+    <meta name="theme-color" content="#0d0907" />
+
+    <link rel="canonical" href="https://quirozstudio.github.io/sanfermin-casapaco/" />
+    <link rel="sitemap" type="application/xml" href="https://quirozstudio.github.io/sanfermin-casapaco/sitemap.xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,199 +23,237 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Casa Paco Pamplona" />
+    <meta property="og:title" content="Menús de Casa Paco en Pamplona" />
+    <meta
+      property="og:description"
+      content="Menú del día y menú de fin de semana con cocina navarra, precios y alérgenos en el centro de Pamplona."
+    />
+    <meta property="og:url" content="https://quirozstudio.github.io/sanfermin-casapaco/" />
+    <meta
+      property="og:image"
+      content="https://quirozstudio.github.io/sanfermin-casapaco/img/menu-del-dia-casa-paco.jpg"
+    />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="1536" />
+    <meta property="og:image:alt" content="Menú del día de Casa Paco en Pamplona" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "@id": "https://casapacopamplona.com/#restaurant",
+        "name": "Casa Paco",
+        "url": "https://casapacopamplona.com/",
+        "telephone": "+34948598074",
+        "priceRange": "€€",
+        "servesCuisine": ["Cocina navarra", "Cocina española", "Gastrobar"],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rincón de San Nicolás, 1",
+          "postalCode": "31001",
+          "addressLocality": "Pamplona",
+          "addressRegion": "Navarra",
+          "addressCountry": "ES"
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Pamplona" },
+          { "@type": "AdministrativeArea", "name": "Navarra" }
+        ],
+        "hasMenu": "https://quirozstudio.github.io/sanfermin-casapaco/",
+        "sameAs": ["https://www.instagram.com/casapacogastrobar/"],
+        "openingHoursSpecification": [
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "10:00", "closes": "17:00" },
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "10:00", "closes": "23:00" },
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "10:00", "closes": "23:30" },
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday", "Saturday"], "opens": "10:00", "closes": "23:59" },
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "11:00", "closes": "17:00" }
+        ]
+      }
+    </script>
   </head>
   <body>
-    <main class="page">
-      <section class="hero">
-        <p class="eyebrow">Casa Paco · Gastrobar · Pamplona</p>
-        <h1>Menú fin de semana</h1>
-        <div class="price">37€</div>
-        <p class="included">
-          Incluye pan, vino crianza, sidra, refresco, caña o agua.
-        </p>
-      </section>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-      <section class="menu-section">
-        <div class="section-title">
-          <span>01</span>
-          <h2>Primeros</h2>
+    <header class="site-header" aria-label="Cabecera principal">
+      <a class="brand" href="#inicio" aria-label="Casa Paco, volver al inicio">
+        <span class="brand-mark" aria-hidden="true">CP</span>
+        <span>Casa Paco</span>
+      </a>
+      <nav class="site-nav" aria-label="Navegación de menús">
+        <a href="#menu-del-dia">Menú del día</a>
+        <a href="#menu-fin-de-semana">Fin de semana</a>
+        <a href="#visitanos">Visítanos</a>
+      </nav>
+      <a class="header-cta" href="tel:+34948598074">Reservar</a>
+    </header>
+
+    <main id="contenido">
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="hero-content reveal">
+          <p class="eyebrow">Gastrobar · Casco Antiguo · Pamplona</p>
+          <h1 id="hero-title">Dos menús.<br /><em>Una mesa.</em></h1>
+          <p class="hero-copy">Cocina navarra, producto de temporada y sobremesas en el corazón de Pamplona.</p>
+          <div class="hero-actions" aria-label="Accesos principales">
+            <a class="button button-primary" href="#menus-originales">Ver los menús</a>
+            <a class="button button-secondary" href="tel:+34948598074">Llamar al 948 59 80 74</a>
+          </div>
         </div>
-
-        <article class="dish">
-          <h3>Pochas a la navarra con almejas y piparras</h3>
-          <p>Guiso navarro suave y sabroso, con legumbre fina, toque marinero de almejas y el punto alegre de la piparra.</p>
-          <small>Sin gluten · Contiene moluscos y sulfitos</small>
-        </article>
-
-        <article class="dish">
-          <h3>Verdura de temporada</h3>
-          <p>Producto fresco de temporada, cocinado con sencillez para mantener su sabor natural.</p>
-          <small>Sin gluten · Contiene sulfitos</small>
-        </article>
-
-        <article class="dish">
-          <h3>Ensaladilla rusa con grissines</h3>
-          <p>Clásica ensaladilla cremosa, servida con grissines crujientes para acompañar.</p>
-          <small>Opción sin gluten · Contiene gluten, huevo y pescado</small>
-        </article>
-
-        <article class="dish">
-          <h3>Pasta del día</h3>
-          <p>Receta diaria de pasta, pensada para un primer plato completo y reconfortante.</p>
-          <small>Contiene gluten, huevo y lácteos</small>
-        </article>
-
-        <article class="dish">
-          <h3>Crepe relleno de boletus con salsa trufada</h3>
-          <p>Crepe meloso con boletus y una salsa trufada aromática, cremosa y elegante.</p>
-          <small>Contiene gluten y lácteos</small>
-        </article>
-
-        <article class="dish">
-          <h3>Risotto de hongos con galleta de Idiazábal y lluvia de parmesano</h3>
-          <p>Arroz cremoso con hongos, intensidad de queso Idiazábal y parmesano rallado al momento.</p>
-          <small>Contiene lácteos y gluten</small>
-        </article>
-
-        <article class="dish">
-          <h3>Gazpacho andaluz con picatostes, virutas de ibérico y huevo duro</h3>
-          <p>Gazpacho fresco con guarnición crujiente, ibérico y huevo para darle más cuerpo y sabor.</p>
-          <small>Opción sin gluten · Contiene gluten, huevo y sulfitos</small>
-        </article>
-      </section>
-
-      <section class="menu-section">
-        <div class="section-title">
-          <span>10</span>
-          <h2>Segundos</h2>
-        </div>
-
-        <article class="dish">
-          <h3>Rabo estilo tradicional con patatas fritas</h3>
-          <p>Carne cocinada lentamente hasta quedar tierna, con salsa tradicional y patatas fritas.</p>
-          <small>Opción sin gluten · Contiene gluten y sulfitos</small>
-        </article>
-
-        <article class="dish">
-          <h3>Manitas deshuesadas crujientes con patatas fritas caseras</h3>
-          <p>Manitas trabajadas sin hueso, doradas por fuera y jugosas por dentro, con patatas caseras.</p>
-          <small>Contiene gluten, huevo y sulfitos</small>
-        </article>
-
-        <article class="dish">
-          <h3>Ajoarriero con huevo a baja temperatura y patatas paja</h3>
-          <p>Receta tradicional con bacalao, huevo cremoso y patata paja para aportar textura.</p>
-          <small>Contiene pescado, huevo y sulfitos</small>
-        </article>
-
-        <article class="dish">
-          <h3>Pimientos rellenos de merluza y gambas al ajillo con crema de piquillo</h3>
-          <p>Pimientos suaves y cremosos, rellenos de merluza y gambas, terminados con salsa de piquillo.</p>
-          <small>Contiene pescado, crustáceos, gluten, huevo, lácteos y sulfitos</small>
-        </article>
-
-        <article class="dish">
-          <h3>Pescado fresco del día con panaderas</h3>
-          <p>Selección diaria de pescado fresco, acompañado de patatas panaderas.</p>
-          <small>Contiene pescado</small>
-        </article>
-
-        <article class="dish">
-          <h3>Callos estilo navarro</h3>
-          <p>Plato de cuchara con carácter, salsa ligada y sabor tradicional navarro.</p>
-          <small>Sin gluten · Contiene sulfitos</small>
-        </article>
-
-        <article class="dish featured">
-          <h3>Entrecot con piquillos y patatas fritas caseras</h3>
-          <p>Corte de carne a la plancha, servido con pimientos del piquillo y patatas fritas caseras.</p>
-          <strong>Suplemento +7€</strong>
-          <small>Opción sin gluten · Contiene sulfitos</small>
-        </article>
-      </section>
-
-      <section class="menu-section">
-        <div class="section-title">
-          <span>20</span>
-          <h2>Postres</h2>
-        </div>
-
-        <article class="dish">
-          <h3>Cremoso de queso con lluvia de Lotus y frutos rojos</h3>
-          <p>Postre cremoso y dulce, con galleta Lotus y el contraste fresco de los frutos rojos.</p>
-          <small>Contiene gluten, lácteos y huevo</small>
-        </article>
-
-        <article class="dish">
-          <h3>Cuajada del Ultzama con miel y nueces</h3>
-          <p>Cuajada tradicional, suave y láctea, acompañada de miel y nueces.</p>
-          <small>Contiene lácteos y frutos de cáscara</small>
-        </article>
-
-        <article class="dish">
-          <h3>Torrija con helado de galleta</h3>
-          <p>Torrija jugosa con helado de galleta, un final goloso y muy reconocible.</p>
-          <small>Contiene gluten, huevo y lácteos</small>
-        </article>
-
-        <article class="dish">
-          <h3>Queso de Irati con membrillo y nueces</h3>
-          <p>Queso con personalidad, acompañado de dulce de membrillo y nueces.</p>
-          <small>Contiene lácteos y frutos de cáscara</small>
-        </article>
-
-        <article class="dish">
-          <h3>Brownie de chocolate con helado de avellana</h3>
-          <p>Brownie intenso de chocolate con helado de avellana para rematar con textura y sabor.</p>
-          <small>Contiene gluten, huevo, lácteos y frutos de cáscara</small>
-        </article>
-
-        <article class="dish">
-          <h3>Sorbete de mandarina al patxarán</h3>
-          <p>Sorbete fresco y digestivo con el toque navarro del patxarán.</p>
-          <small>Contiene sulfitos</small>
-        </article>
-
-        <article class="dish">
-          <h3>Goxua caramelizada casera</h3>
-          <p>Postre tradicional cremoso, con bizcocho, nata, crema y caramelo tostado.</p>
-          <small>Contiene gluten, huevo y lácteos</small>
-        </article>
-      </section>
-
-      <section class="notes">
-        <div>
-          <h2>Condiciones del menú</h2>
-          <p>Pan extra 1€. Servicio de terraza 1€. Posibilidad de medio menú. No se permite compartir menú.</p>
-          <p>En caso de intolerancias o alergias, consulte al personal antes de pedir.</p>
+        <div class="hero-meta reveal" aria-label="Información rápida">
+          <span>Entre semana <strong>22 €</strong></span>
+          <span>Fin de semana <strong>37 €</strong></span>
+          <span>Rincón de San Nicolás, 1</span>
         </div>
       </section>
 
-      <section class="photo-section">
-        <h2>Menús originales</h2>
-        <div class="menu-photos">
-          <article class="menu-photo">
-            <h3>Menú del día · 22€</h3>
-            <img
-              src="img/menu-del-dia-casa-paco.jpg"
-              alt="Menú del día de Casa Paco con platos, condiciones y alérgenos"
-            />
-          </article>
-          <article class="menu-photo">
-            <h3>Fin de semana · 37€</h3>
-            <img
-              src="img/menu-fin-de-semana-casa-paco.jpg"
-              alt="Menú de fin de semana de Casa Paco con platos, condiciones y alérgenos"
-            />
-          </article>
+      <section class="menu-documents section-shell" id="menus-originales" aria-labelledby="menus-title">
+        <div class="section-intro reveal">
+          <p class="eyebrow">La información de un vistazo</p>
+          <h2 id="menus-title">Menús originales</h2>
+          <p>Cada menú ocupa su propia tarjeta y conserva su proporción completa para que las imágenes nunca se monten ni se recorten.</p>
         </div>
+
+        <div class="menu-gallery">
+          <figure class="menu-document reveal">
+            <figcaption><span>Entre semana</span><strong>Menú del día · 22 €</strong></figcaption>
+            <div class="menu-document-frame">
+              <img src="img/menu-del-dia-casa-paco.jpg" alt="Menú del día de Casa Paco en Pamplona con platos, condiciones y alérgenos" width="1024" height="1536" decoding="async" fetchpriority="high" />
+            </div>
+          </figure>
+          <figure class="menu-document reveal">
+            <figcaption><span>Sábados y domingos</span><strong>Menú especial · 37 €</strong></figcaption>
+            <div class="menu-document-frame">
+              <img src="img/menu-fin-de-semana-casa-paco.jpg" alt="Menú de fin de semana de Casa Paco en Pamplona con platos, condiciones y alérgenos" width="853" height="1280" loading="lazy" decoding="async" />
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="menu-block section-shell" id="menu-del-dia" aria-labelledby="daily-title">
+        <header class="menu-heading reveal">
+          <div><p class="eyebrow">Martes a viernes · Pamplona</p><h2 id="daily-title">Menú del día</h2></div>
+          <strong class="menu-price">22 €</strong>
+          <p>Incluye pan, vino del año, sidra, refresco, caña o agua.</p>
+        </header>
+        <div class="courses-grid">
+          <section class="course reveal" aria-labelledby="daily-first">
+            <div class="course-title"><span>01</span><h3 id="daily-first">Primeros</h3></div>
+            <ul class="dish-list">
+              <li><strong>Pochas a la navarra con almejas y piparras</strong><small>Sin gluten · Moluscos · Sulfitos</small></li>
+              <li><strong>Verdura de temporada</strong><small>Sin gluten · Sulfitos</small></li>
+              <li><strong>Ensaladilla rusa con grissines</strong><small>Opción sin gluten · Gluten · Huevo · Pescado</small></li>
+              <li><strong>Pasta del día</strong><small>Gluten · Huevo · Lácteos</small></li>
+              <li><strong>Risotto de hongos con Idiazábal y parmesano</strong><small>Gluten · Lácteos</small></li>
+              <li><strong>Gazpacho con picatostes, ibérico y huevo duro</strong><small>Opción sin gluten · Gluten · Huevo · Sulfitos</small></li>
+            </ul>
+          </section>
+          <section class="course reveal" aria-labelledby="daily-second">
+            <div class="course-title"><span>02</span><h3 id="daily-second">Segundos</h3></div>
+            <ul class="dish-list">
+              <li><strong>Rabo tradicional con patatas fritas</strong><small>Opción sin gluten · Gluten · Sulfitos</small></li>
+              <li><strong>Manitas deshuesadas crujientes</strong><small>Gluten · Huevo · Sulfitos</small></li>
+              <li><strong>Ajoarriero con huevo a baja temperatura</strong><small>Pescado · Huevo · Sulfitos</small></li>
+              <li><strong>Pimientos rellenos de merluza y gambas</strong><small>Pescado · Crustáceos · Gluten · Huevo · Lácteos · Sulfitos</small></li>
+              <li><strong>Pescado fresco del día con panaderas</strong><small>Pescado</small></li>
+              <li class="dish-featured"><strong>Entrecot con piquillos y patatas caseras</strong><span>Suplemento +7 €</span><small>Opción sin gluten · Sulfitos</small></li>
+            </ul>
+          </section>
+          <section class="course reveal" aria-labelledby="daily-dessert">
+            <div class="course-title"><span>03</span><h3 id="daily-dessert">Postres</h3></div>
+            <ul class="dish-list">
+              <li><strong>Cremoso de queso con Lotus y frutos rojos</strong><small>Huevo · Lácteos · Frutos de cáscara</small></li>
+              <li><strong>Cuajada de Ultzama con miel y nueces</strong><small>Lácteos · Frutos de cáscara</small></li>
+              <li><strong>Torrija con helado de galleta</strong><small>Gluten · Huevo · Lácteos</small></li>
+              <li><strong>Queso de Irati con membrillo y nueces</strong><small>Lácteos · Frutos de cáscara</small></li>
+              <li><strong>Brownie con helado de avellana</strong><small>Gluten · Huevo · Lácteos · Frutos de cáscara</small></li>
+              <li><strong>Sorbete de mandarina al patxarán</strong><small>Sulfitos</small></li>
+            </ul>
+          </section>
+        </div>
+      </section>
+
+      <section class="menu-block section-shell" id="menu-fin-de-semana" aria-labelledby="weekend-title">
+        <header class="menu-heading reveal">
+          <div><p class="eyebrow">Sábados y domingos · Navarra</p><h2 id="weekend-title">Menú fin de semana</h2></div>
+          <strong class="menu-price">37 €</strong>
+          <p>Incluye pan, vino crianza, sidra, refresco, caña o agua.</p>
+        </header>
+        <div class="courses-grid">
+          <section class="course reveal" aria-labelledby="weekend-first">
+            <div class="course-title"><span>01</span><h3 id="weekend-first">Primeros</h3></div>
+            <ul class="dish-list">
+              <li><strong>Pochas a la navarra con almejas y piparras</strong><small>Sin gluten · Moluscos · Sulfitos</small></li>
+              <li><strong>Verdura de temporada</strong><small>Sin gluten · Sulfitos</small></li>
+              <li><strong>Ensaladilla rusa con grissines</strong><small>Opción sin gluten · Gluten · Huevo · Pescado</small></li>
+              <li><strong>Pasta del día</strong><small>Gluten · Huevo · Lácteos</small></li>
+              <li><strong>Crepe de boletus con salsa trufada</strong><small>Gluten · Lácteos</small></li>
+              <li><strong>Risotto de hongos con Idiazábal y parmesano</strong><small>Gluten · Lácteos</small></li>
+              <li><strong>Gazpacho con picatostes, ibérico y huevo duro</strong><small>Opción sin gluten · Gluten · Huevo · Sulfitos</small></li>
+            </ul>
+          </section>
+          <section class="course reveal" aria-labelledby="weekend-second">
+            <div class="course-title"><span>02</span><h3 id="weekend-second">Segundos</h3></div>
+            <ul class="dish-list">
+              <li><strong>Rabo tradicional con patatas fritas</strong><small>Opción sin gluten · Gluten · Sulfitos</small></li>
+              <li><strong>Manitas deshuesadas crujientes</strong><small>Gluten · Huevo · Sulfitos</small></li>
+              <li><strong>Ajoarriero con huevo a baja temperatura</strong><small>Pescado · Huevo · Sulfitos</small></li>
+              <li><strong>Pimientos rellenos de merluza y gambas</strong><small>Pescado · Crustáceos · Gluten · Huevo · Lácteos · Sulfitos</small></li>
+              <li><strong>Pescado fresco del día con panaderas</strong><small>Pescado</small></li>
+              <li><strong>Callos estilo navarro</strong><small>Sin gluten · Sulfitos</small></li>
+              <li class="dish-featured"><strong>Entrecot con piquillos y patatas caseras</strong><span>Suplemento +7 €</span><small>Opción sin gluten · Sulfitos</small></li>
+            </ul>
+          </section>
+          <section class="course reveal" aria-labelledby="weekend-dessert">
+            <div class="course-title"><span>03</span><h3 id="weekend-dessert">Postres</h3></div>
+            <ul class="dish-list">
+              <li><strong>Cremoso de queso con Lotus y frutos rojos</strong><small>Gluten · Huevo · Lácteos</small></li>
+              <li><strong>Cuajada de Ultzama con miel y nueces</strong><small>Lácteos · Frutos de cáscara</small></li>
+              <li><strong>Torrija con helado de galleta</strong><small>Gluten · Huevo · Lácteos</small></li>
+              <li><strong>Queso de Irati con membrillo y nueces</strong><small>Lácteos · Frutos de cáscara</small></li>
+              <li><strong>Brownie con helado de avellana</strong><small>Gluten · Huevo · Lácteos · Frutos de cáscara</small></li>
+              <li><strong>Sorbete de mandarina al patxarán</strong><small>Sulfitos</small></li>
+              <li><strong>Goxua caramelizada casera</strong><small>Gluten · Huevo · Lácteos</small></li>
+            </ul>
+          </section>
+        </div>
+      </section>
+
+      <aside class="allergen-note section-shell reveal" aria-labelledby="allergen-title">
+        <p class="eyebrow">Información importante</p>
+        <h2 id="allergen-title">Alergias e intolerancias</h2>
+        <p>La composición puede variar según disponibilidad y elaboración. Consulta siempre al personal antes de pedir. Hay pan sin gluten para bocadillos y menús.</p>
+        <small>Pan extra 1 € · Servicio de terraza 1 € · Posibilidad de medio menú · No se permite compartir menú.</small>
+      </aside>
+
+      <section class="visit section-shell" id="visitanos" aria-labelledby="visit-title">
+        <div class="visit-copy reveal">
+          <p class="eyebrow">Casa Paco · Pamplona, Navarra</p>
+          <h2 id="visit-title">En pleno centro<br />de Pamplona.</h2>
+          <p>Estamos en el Rincón de San Nicolás, en el Casco Antiguo. Reserva tu mesa o abre la ruta para llegar directamente.</p>
+        </div>
+        <address class="contact-card reveal">
+          <div><span>Dirección</span><strong>Rincón de San Nicolás, 1<br />31001 Pamplona, Navarra</strong></div>
+          <div><span>Reservas</span><a href="tel:+34948598074">948 59 80 74</a></div>
+          <div class="contact-actions">
+            <a class="button button-primary" href="https://www.google.com/maps/search/?api=1&amp;query=Casa%20Paco%2C%20Rinc%C3%B3n%20de%20San%20Nicol%C3%A1s%201%2C%20Pamplona" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+            <a class="button button-secondary" href="https://casapacopamplona.com/">Web principal</a>
+          </div>
+        </address>
       </section>
     </main>
 
-    <footer>
-      <p>Casa Paco · Pamplona · Menú fin de semana</p>
+    <footer class="site-footer">
+      <p>Casa Paco · Cocina navarra en Pamplona</p>
+      <a class="quiroz-signature" href="https://www.instagram.com/bryans_quiroz/" target="_blank" rel="noopener noreferrer" aria-label="Diseño y desarrollo web por QUIROZ, Instagram de Bryans Quiroz">
+        <span>Diseño y desarrollo web por</span><strong>QUIROZ</strong>
+      </a>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
   </body>
 </html>
