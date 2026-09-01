@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Menú del día y fin de semana en Pamplona | Casa Paco</title>
+    <title>Carta, menú del día y fin de semana en Pamplona | Casa Paco</title>
     <meta
       name="description"
-      content="Descubre el menú del día y el menú de fin de semana de Casa Paco, gastrobar de cocina navarra en el centro de Pamplona. Precios, platos y alérgenos."
+      content="Descubre la carta, el menú del día y el menú de fin de semana de Casa Paco, gastrobar de cocina navarra en el centro de Pamplona."
     />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="author" content="Casa Paco" />
@@ -27,10 +27,10 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:site_name" content="Casa Paco Pamplona" />
-    <meta property="og:title" content="Menús de Casa Paco en Pamplona" />
+    <meta property="og:title" content="Carta y menús de Casa Paco en Pamplona" />
     <meta
       property="og:description"
-      content="Menú del día y menú de fin de semana con cocina navarra, precios y alérgenos en el centro de Pamplona."
+      content="Carta permanente, menú del día y menú de fin de semana con cocina navarra en el centro de Pamplona."
     />
     <meta property="og:url" content="https://quirozstudio.github.io/sanfermin-casapaco/" />
     <meta
@@ -64,7 +64,7 @@
           { "@type": "City", "name": "Pamplona" },
           { "@type": "AdministrativeArea", "name": "Navarra" }
         ],
-        "hasMenu": "https://quirozstudio.github.io/sanfermin-casapaco/",
+        "hasMenu": "https://quirozstudio.github.io/sanfermin-casapaco/#carta",
         "sameAs": ["https://www.instagram.com/casapacogastrobar/"],
         "openingHoursSpecification": [
           { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "10:00", "closes": "17:00" },
@@ -86,8 +86,8 @@
       </a>
       <nav class="site-nav" aria-label="Navegación de menús">
         <a href="#menu-del-dia">Menú del día</a>
-        <a href="#menu-fin-de-semana">Fin de semana</a>
-        <a href="#visitanos">Visítanos</a>
+        <a href="#carta">Carta</a>
+        <a href="#menu-fin-de-semana">Menú fin de semana</a>
       </nav>
       <a class="header-cta" href="tel:+34948598074">Reservar</a>
     </header>
@@ -97,15 +97,16 @@
         <div class="hero-glow" aria-hidden="true"></div>
         <div class="hero-content reveal">
           <p class="eyebrow">Gastrobar · Casco Antiguo · Pamplona</p>
-          <h1 id="hero-title">Dos menús.<br /><em>Una mesa.</em></h1>
+          <h1 id="hero-title">Tres formas.<br /><em>Una mesa.</em></h1>
           <p class="hero-copy">Cocina navarra, producto de temporada y sobremesas en el corazón de Pamplona.</p>
           <div class="hero-actions" aria-label="Accesos principales">
-            <a class="button button-primary" href="#menus-originales">Ver los menús</a>
+            <a class="button button-primary" href="#carta">Ver la carta</a>
             <a class="button button-secondary" href="tel:+34948598074">Llamar al 948 59 80 74</a>
           </div>
         </div>
         <div class="hero-meta reveal" aria-label="Información rápida">
           <span>Entre semana <strong>22 €</strong></span>
+          <span>Carta <strong>Todo el año</strong></span>
           <span>Fin de semana <strong>37 €</strong></span>
           <span>Rincón de San Nicolás, 1</span>
         </div>
@@ -174,6 +175,44 @@
               <li><strong>Sorbete de mandarina al patxarán</strong><small>Sulfitos</small></li>
             </ul>
           </section>
+        </div>
+      </section>
+
+      <section class="carta-section" id="carta" aria-labelledby="carta-title">
+        <header class="carta-masthead">
+          <div class="carta-masthead__brand" aria-label="Casa Paco, Pamplona">
+            <strong>Casa Paco</strong>
+            <span>Pamplona</span>
+          </div>
+
+          <div class="carta-language" role="group" aria-label="Idioma de la carta">
+            <button type="button" data-carta-lang="es" aria-pressed="true">ES</button>
+            <span aria-hidden="true">|</span>
+            <button type="button" data-carta-lang="en" aria-pressed="false">EN</button>
+            <span aria-hidden="true">|</span>
+            <button type="button" data-carta-lang="fr" aria-pressed="false">FR</button>
+          </div>
+
+          <div class="carta-masthead__title">
+            <p>La carta</p>
+            <h2 id="carta-title">La carta</h2>
+            <blockquote data-carta-tagline>De nuestra cocina a tu mesa.</blockquote>
+          </div>
+
+          <div class="carta-masthead__stamp" aria-hidden="true">
+            <span>Casa</span>
+            <strong>Paco</strong>
+            <small>Desde Pamplona</small>
+          </div>
+        </header>
+
+        <nav class="carta-category-nav" id="carta-category-nav" aria-label="Categorías de la carta"></nav>
+
+        <div class="carta-paper">
+          <div class="carta-menu" id="carta-menu"></div>
+          <p class="carta-note" data-carta-note>
+            Precios con IVA incluido. Servicio de terraza: +1 €. Avisa al personal de cualquier alergia o intolerancia.
+          </p>
         </div>
       </section>
 
@@ -247,6 +286,37 @@
       </section>
     </main>
 
+    <dialog class="dish-sheet" id="dish-dialog" aria-labelledby="dish-sheet-title">
+      <article class="dish-sheet__panel">
+        <div class="dish-sheet__handle" aria-hidden="true"></div>
+        <button class="dish-sheet__close" type="button" aria-label="Cerrar">×</button>
+        <div class="dish-sheet__media" hidden>
+          <img class="dish-sheet__image" alt="" />
+        </div>
+        <div class="dish-sheet__content">
+          <p class="dish-sheet__category" data-sheet-category></p>
+          <div class="dish-sheet__heading">
+            <h2 id="dish-sheet-title" data-sheet-name></h2>
+            <strong data-sheet-price></strong>
+          </div>
+          <dl class="dish-sheet__details">
+            <div>
+              <dt data-sheet-description-label>Descripción</dt>
+              <dd data-sheet-description></dd>
+            </div>
+            <div>
+              <dt data-sheet-ingredients-label>Ingredientes</dt>
+              <dd data-sheet-ingredients></dd>
+            </div>
+            <div>
+              <dt data-sheet-allergens-label>Alérgenos</dt>
+              <dd data-sheet-allergens></dd>
+            </div>
+          </dl>
+        </div>
+      </article>
+    </dialog>
+
     <footer class="site-footer">
       <p>Casa Paco · Cocina navarra en Pamplona</p>
       <a class="quiroz-signature" href="https://www.instagram.com/bryans_quiroz/" target="_blank" rel="noopener noreferrer" aria-label="Diseño y desarrollo web por QUIROZ, Instagram de Bryans Quiroz">
@@ -254,6 +324,8 @@
       </a>
     </footer>
 
+    <script src="js/carta-data.js" defer></script>
+    <script src="js/carta.js" defer></script>
     <script src="js/script.js" defer></script>
   </body>
 </html>
