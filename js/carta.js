@@ -7,19 +7,27 @@
 
   if (!data || !carta || !categoryNav || !menuRoot || !dialog) return;
 
-  const languageButtons = [...document.querySelectorAll("[data-carta-lang]")];
   const dialogClose = dialog.querySelector(".dish-sheet__close");
   const dialogImage = dialog.querySelector(".dish-sheet__image");
   const dialogMedia = dialog.querySelector(".dish-sheet__media");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const dishIndex = new Map();
-  let currentLanguage = data.defaultLanguage;
+  let currentLanguage = readLanguage();
   let activeObserver;
   let lastTrigger;
 
   data.categories.forEach((category) => {
     category.dishes.forEach((dish) => dishIndex.set(dish.id, { dish, category }));
   });
+
+  function readLanguage() {
+    try {
+      const saved = localStorage.getItem("casaPacoLanguage");
+      return data.languages.some((item) => item.code === saved) ? saved : data.defaultLanguage;
+    } catch (error) {
+      return data.defaultLanguage;
+    }
+  }
 
   function translated(value) {
     if (typeof value === "string") return value;
@@ -112,18 +120,17 @@
 
   function updateStaticCopy() {
     carta.lang = currentLanguage;
+    carta.querySelector("[data-carta-kicker]").textContent = translated(data.ui.kicker);
+    carta.querySelector("[data-carta-title]").textContent = translated(data.ui.title);
+    carta.querySelector("[data-carta-stamp]").textContent = translated(data.ui.stamp);
     carta.querySelector("[data-carta-tagline]").textContent = translated(data.ui.tagline);
     carta.querySelector("[data-carta-note]").textContent = translated(data.ui.note);
+    categoryNav.setAttribute("aria-label", translated(data.ui.categoriesLabel));
     dialogClose.setAttribute("aria-label", translated(data.ui.close));
     dialog.querySelector("[data-sheet-description-label]").textContent = translated(data.ui.description);
     dialog.querySelector("[data-sheet-ingredients-label]").textContent = translated(data.ui.ingredients);
     dialog.querySelector("[data-sheet-allergens-label]").textContent = translated(data.ui.allergens);
 
-    languageButtons.forEach((button) => {
-      const isActive = button.dataset.cartaLang === currentLanguage;
-      button.setAttribute("aria-pressed", String(isActive));
-      button.classList.toggle("is-active", isActive);
-    });
   }
 
   function setLanguage(language) {
@@ -205,8 +212,8 @@
     menuRoot.querySelectorAll("[data-category-section]").forEach((section) => activeObserver.observe(section));
   }
 
-  languageButtons.forEach((button) => {
-    button.addEventListener("click", () => setLanguage(button.dataset.cartaLang));
+  window.addEventListener("casa-paco:languagechange", (event) => {
+    setLanguage(event.detail.language);
   });
 
   menuRoot.addEventListener("click", (event) => {

@@ -79,64 +79,76 @@
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-    <header class="site-header" aria-label="Cabecera principal">
-      <a class="brand" href="#inicio" aria-label="Casa Paco, volver al inicio">
-        <span class="brand-mark" aria-hidden="true">CP</span>
-        <span>Casa Paco</span>
-      </a>
-      <nav class="site-nav" aria-label="Navegación de menús">
-        <a href="#menu-del-dia">Menú del día</a>
-        <a href="#carta">Carta</a>
-        <a href="#menu-fin-de-semana">Menú fin de semana</a>
-      </nav>
-      <a class="header-cta" href="tel:+34948598074">Reservar</a>
-    </header>
+    <main id="contenido" class="experience-app">
+      <section class="portal-view" id="inicio" data-view="inicio" aria-labelledby="portal-title">
+        <div class="portal-grain" aria-hidden="true"></div>
+        <div class="portal-shell">
+          <header class="portal-header">
+            <a class="portal-brand" href="#inicio" aria-label="Casa Paco, Pamplona">
+              <strong>Casa Paco</strong>
+              <span>Pamplona</span>
+            </a>
+            <div class="language-switcher language-switcher--portal" role="group" aria-label="Idioma">
+              <button type="button" data-global-lang="es" aria-pressed="true">ES</button>
+              <span aria-hidden="true">|</span>
+              <button type="button" data-global-lang="en" aria-pressed="false">EN</button>
+              <span aria-hidden="true">|</span>
+              <button type="button" data-global-lang="fr" aria-pressed="false">FR</button>
+            </div>
+          </header>
 
-    <main id="contenido">
-      <section class="hero" id="inicio" aria-labelledby="hero-title">
-        <div class="hero-glow" aria-hidden="true"></div>
-        <div class="hero-content reveal">
-          <p class="eyebrow">Gastrobar · Casco Antiguo · Pamplona</p>
-          <h1 id="hero-title">Tres formas.<br /><em>Una mesa.</em></h1>
-          <p class="hero-copy">Cocina navarra, producto de temporada y sobremesas en el corazón de Pamplona.</p>
-          <div class="hero-actions" aria-label="Accesos principales">
-            <a class="button button-primary" href="#carta">Ver la carta</a>
-            <a class="button button-secondary" href="tel:+34948598074">Llamar al 948 59 80 74</a>
+          <div class="portal-intro">
+            <p class="portal-kicker" data-ui="portalKicker">Cocina navarra · Pamplona</p>
+            <h1 id="portal-title"><span data-ui="portalTitleTop">Tres formas.</span><em data-ui="portalTitleBottom">Una mesa.</em></h1>
+            <p data-ui="portalCopy">Elige cómo quieres descubrir Casa Paco.</p>
           </div>
-        </div>
-        <div class="hero-meta reveal" aria-label="Información rápida">
-          <span>Entre semana <strong>22 €</strong></span>
-          <span>Carta <strong>Todo el año</strong></span>
-          <span>Fin de semana <strong>37 €</strong></span>
-          <span>Rincón de San Nicolás, 1</span>
+
+          <nav class="portal-choices" aria-label="Experiencias de Casa Paco" data-ui-aria="experiencesLabel">
+            <a class="portal-choice portal-choice--carta" href="#carta" data-route="carta">
+              <span class="portal-choice__number">01</span>
+              <span class="portal-choice__copy"><strong data-ui="carta">Carta</strong><small data-ui="cartaMeta">Todo el año</small></span>
+              <span class="portal-choice__arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="portal-choice" href="#menu-del-dia" data-route="menu-del-dia">
+              <span class="portal-choice__number">02</span>
+              <span class="portal-choice__copy"><strong data-ui="daily">Menú del día</strong><small data-ui="dailyMeta">Martes a viernes · 22 €</small></span>
+              <span class="portal-choice__arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="portal-choice" href="#menu-fin-de-semana" data-route="menu-fin-de-semana">
+              <span class="portal-choice__number">03</span>
+              <span class="portal-choice__copy"><strong data-ui="weekend">Menú fin de semana</strong><small data-ui="weekendMeta">Sábados y domingos · 37 €</small></span>
+              <span class="portal-choice__arrow" aria-hidden="true">↗</span>
+            </a>
+          </nav>
+
+          <footer class="portal-footer">
+            <span>Rincón de San Nicolás, 1</span>
+            <a href="tel:+34948598074"><span data-ui="reservations">Reservas</span> · 948 59 80 74</a>
+          </footer>
         </div>
       </section>
 
-      <section class="menu-documents section-shell" id="menus-originales" aria-labelledby="menus-title">
-        <div class="section-intro reveal">
-          <p class="eyebrow">La información de un vistazo</p>
-          <h2 id="menus-title">Menús originales</h2>
-          <p>Cada menú ocupa su propia tarjeta y conserva su proporción completa para que las imágenes nunca se monten ni se recorten.</p>
-        </div>
-
-        <div class="menu-gallery">
-          <figure class="menu-document reveal">
-            <figcaption><span>Entre semana</span><strong>Menú del día · 22 €</strong></figcaption>
-            <div class="menu-document-frame">
-              <img src="img/menu-del-dia-casa-paco.jpg" alt="Menú del día de Casa Paco en Pamplona con platos, condiciones y alérgenos" width="1024" height="1536" decoding="async" fetchpriority="high" />
-            </div>
-          </figure>
-          <figure class="menu-document reveal">
-            <figcaption><span>Sábados y domingos</span><strong>Menú especial · 37 €</strong></figcaption>
-            <div class="menu-document-frame">
-              <img src="img/menu-fin-de-semana-casa-paco.jpg" alt="Menú de fin de semana de Casa Paco en Pamplona con platos, condiciones y alérgenos" width="853" height="1280" loading="lazy" decoding="async" />
-            </div>
-          </figure>
-        </div>
-      </section>
+      <div class="experience-view experience-view--menu experience-view--daily" data-view="menu-del-dia" hidden>
+        <nav class="experience-toolbar experience-toolbar--daily" aria-label="Navegación de Casa Paco" data-ui-aria="navigationLabel">
+          <a class="experience-home" href="#inicio"><span aria-hidden="true">←</span><span>Casa Paco</span></a>
+          <div class="experience-switcher">
+            <a href="#carta" data-ui="carta">Carta</a>
+            <a href="#menu-del-dia" data-ui="daily" aria-current="page">Menú del día</a>
+            <a href="#menu-fin-de-semana" data-ui="weekendShort">Fin de semana</a>
+          </div>
+          <div class="language-switcher" role="group" aria-label="Idioma">
+            <button type="button" data-global-lang="es" aria-pressed="true">ES</button><span aria-hidden="true">|</span>
+            <button type="button" data-global-lang="en" aria-pressed="false">EN</button><span aria-hidden="true">|</span>
+            <button type="button" data-global-lang="fr" aria-pressed="false">FR</button>
+          </div>
+        </nav>
 
       <section class="menu-block section-shell" id="menu-del-dia" aria-labelledby="daily-title">
         <header class="menu-heading reveal">
+          <div class="daily-menu-brand" aria-label="Casa Paco Gastrobar, Pamplona">
+            <span class="daily-menu-brand__seal"><strong>Casa</strong><strong>Paco</strong></span>
+            <span>Gastrobar · Pamplona</span>
+          </div>
           <div><p class="eyebrow">Martes a viernes · Pamplona</p><h2 id="daily-title">Menú del día</h2></div>
           <strong class="menu-price">22 €</strong>
           <p>Incluye pan, vino del año, sidra, refresco, caña o agua.</p>
@@ -176,7 +188,46 @@
             </ul>
           </section>
         </div>
+
+        <aside class="daily-service-strip reveal" aria-label="Condiciones del menú" data-ui-aria="dailyConditionsLabel">
+          <div><span aria-hidden="true">01</span><strong data-ui="breadExtra">Pan extra · 1 €</strong></div>
+          <div><span aria-hidden="true">02</span><strong data-ui="terraceService">Servicio de terraza · 1 €</strong></div>
+          <div><span aria-hidden="true">03</span><strong data-ui="halfMenu">Posibilidad de medio menú</strong></div>
+          <div><span aria-hidden="true">04</span><strong data-ui="noSharing">No se permite compartir menú</strong></div>
+          <div><span aria-hidden="true">!</span><strong data-ui="askAllergens">Consulta al personal en caso de alergias</strong></div>
+        </aside>
+
+        <section class="daily-allergen-legend reveal" aria-labelledby="daily-allergen-title">
+          <h3 id="daily-allergen-title" data-ui="allergensTitle">Alérgenos</h3>
+          <div class="daily-allergen-grid">
+            <span><b>G</b><small data-ui="gluten">Gluten</small></span>
+            <span><b>C</b><small data-ui="crustaceans">Crustáceos</small></span>
+            <span><b>H</b><small data-ui="egg">Huevo</small></span>
+            <span><b>P</b><small data-ui="fish">Pescado</small></span>
+            <span><b>L</b><small data-ui="dairy">Lácteos</small></span>
+            <span><b>F</b><small data-ui="nuts">Frutos de cáscara</small></span>
+            <span><b>S</b><small data-ui="sulphites">Sulfitos</small></span>
+            <span><b>M</b><small data-ui="molluscs">Moluscos</small></span>
+          </div>
+        </section>
       </section>
+
+      </div>
+
+      <div class="experience-view experience-view--carta" data-view="carta" hidden>
+        <nav class="experience-toolbar experience-toolbar--carta" aria-label="Navegación de Casa Paco" data-ui-aria="navigationLabel">
+          <a class="experience-home" href="#inicio"><span aria-hidden="true">←</span><span>Casa Paco</span></a>
+          <div class="experience-switcher">
+            <a href="#carta" data-ui="carta" aria-current="page">Carta</a>
+            <a href="#menu-del-dia" data-ui="daily">Menú del día</a>
+            <a href="#menu-fin-de-semana" data-ui="weekendShort">Fin de semana</a>
+          </div>
+          <div class="language-switcher" role="group" aria-label="Idioma">
+            <button type="button" data-global-lang="es" aria-pressed="true">ES</button><span aria-hidden="true">|</span>
+            <button type="button" data-global-lang="en" aria-pressed="false">EN</button><span aria-hidden="true">|</span>
+            <button type="button" data-global-lang="fr" aria-pressed="false">FR</button>
+          </div>
+        </nav>
 
       <section class="carta-section" id="carta" aria-labelledby="carta-title">
         <header class="carta-masthead">
@@ -185,24 +236,16 @@
             <span>Pamplona</span>
           </div>
 
-          <div class="carta-language" role="group" aria-label="Idioma de la carta">
-            <button type="button" data-carta-lang="es" aria-pressed="true">ES</button>
-            <span aria-hidden="true">|</span>
-            <button type="button" data-carta-lang="en" aria-pressed="false">EN</button>
-            <span aria-hidden="true">|</span>
-            <button type="button" data-carta-lang="fr" aria-pressed="false">FR</button>
-          </div>
-
           <div class="carta-masthead__title">
-            <p>La carta</p>
-            <h2 id="carta-title">La carta</h2>
+            <p data-carta-kicker>La carta</p>
+            <h2 id="carta-title" data-carta-title>La carta</h2>
             <blockquote data-carta-tagline>De nuestra cocina a tu mesa.</blockquote>
           </div>
 
           <div class="carta-masthead__stamp" aria-hidden="true">
             <span>Casa</span>
             <strong>Paco</strong>
-            <small>Desde Pamplona</small>
+            <small data-carta-stamp>Desde Pamplona</small>
           </div>
         </header>
 
@@ -216,9 +259,31 @@
         </div>
       </section>
 
+      </div>
+
+      <div class="experience-view experience-view--menu experience-view--weekend" data-view="menu-fin-de-semana" hidden>
+        <nav class="experience-toolbar experience-toolbar--weekend" aria-label="Navegación de Casa Paco" data-ui-aria="navigationLabel">
+          <a class="experience-home" href="#inicio"><span aria-hidden="true">←</span><span>Casa Paco</span></a>
+          <div class="experience-switcher">
+            <a href="#carta" data-ui="carta">Carta</a>
+            <a href="#menu-del-dia" data-ui="daily">Menú del día</a>
+            <a href="#menu-fin-de-semana" data-ui="weekendShort" aria-current="page">Fin de semana</a>
+          </div>
+          <div class="language-switcher" role="group" aria-label="Idioma">
+            <button type="button" data-global-lang="es" aria-pressed="true">ES</button><span aria-hidden="true">|</span>
+            <button type="button" data-global-lang="en" aria-pressed="false">EN</button><span aria-hidden="true">|</span>
+            <button type="button" data-global-lang="fr" aria-pressed="false">FR</button>
+          </div>
+        </nav>
+
       <section class="menu-block section-shell" id="menu-fin-de-semana" aria-labelledby="weekend-title">
         <header class="menu-heading reveal">
-          <div><p class="eyebrow">Sábados y domingos · Navarra</p><h2 id="weekend-title">Menú fin de semana</h2></div>
+          <div class="weekend-menu-photo" role="img" aria-label="Fachada de Casa Paco en Pamplona" data-ui-aria="facadePhotoLabel"></div>
+          <div class="weekend-menu-brand" aria-hidden="true">
+            <span class="weekend-menu-brand__seal">Casa<br />Paco</span>
+            <span>Gastrobar · Pamplona</span>
+          </div>
+          <div class="weekend-menu-title"><p class="eyebrow">Sábados y domingos · Navarra</p><h2 id="weekend-title">Menú fin de semana</h2></div>
           <strong class="menu-price">37 €</strong>
           <p>Incluye pan, vino crianza, sidra, refresco, caña o agua.</p>
         </header>
@@ -260,30 +325,31 @@
             </ul>
           </section>
         </div>
-      </section>
 
-      <aside class="allergen-note section-shell reveal" aria-labelledby="allergen-title">
-        <p class="eyebrow">Información importante</p>
-        <h2 id="allergen-title">Alergias e intolerancias</h2>
-        <p>La composición puede variar según disponibilidad y elaboración. Consulta siempre al personal antes de pedir. Hay pan sin gluten para bocadillos y menús.</p>
-        <small>Pan extra 1 € · Servicio de terraza 1 € · Posibilidad de medio menú · No se permite compartir menú.</small>
-      </aside>
+        <aside class="weekend-service-strip reveal" aria-label="Condiciones del menú" data-ui-aria="dailyConditionsLabel">
+          <div><span aria-hidden="true">01</span><strong data-ui="breadExtra">Pan extra · 1 €</strong></div>
+          <div><span aria-hidden="true">02</span><strong data-ui="terraceService">Servicio de terraza · 1 €</strong></div>
+          <div><span aria-hidden="true">03</span><strong data-ui="halfMenu">Posibilidad de medio menú</strong></div>
+          <div><span aria-hidden="true">04</span><strong data-ui="noSharing">No se permite compartir menú</strong></div>
+          <div><span aria-hidden="true">!</span><strong data-ui="askAllergens">Consulta al personal en caso de alergias</strong></div>
+        </aside>
 
-      <section class="visit section-shell" id="visitanos" aria-labelledby="visit-title">
-        <div class="visit-copy reveal">
-          <p class="eyebrow">Casa Paco · Pamplona, Navarra</p>
-          <h2 id="visit-title">En pleno centro<br />de Pamplona.</h2>
-          <p>Estamos en el Rincón de San Nicolás, en el Casco Antiguo. Reserva tu mesa o abre la ruta para llegar directamente.</p>
-        </div>
-        <address class="contact-card reveal">
-          <div><span>Dirección</span><strong>Rincón de San Nicolás, 1<br />31001 Pamplona, Navarra</strong></div>
-          <div><span>Reservas</span><a href="tel:+34948598074">948 59 80 74</a></div>
-          <div class="contact-actions">
-            <a class="button button-primary" href="https://www.google.com/maps/search/?api=1&amp;query=Casa%20Paco%2C%20Rinc%C3%B3n%20de%20San%20Nicol%C3%A1s%201%2C%20Pamplona" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
-            <a class="button button-secondary" href="https://casapacopamplona.com/">Web principal</a>
+        <section class="weekend-allergen-legend reveal" aria-labelledby="weekend-allergens-title">
+          <h3 id="weekend-allergens-title" data-ui="allergensTitle">Alérgenos</h3>
+          <div class="weekend-allergen-grid">
+            <span><b aria-hidden="true">G</b><small data-ui="gluten">Gluten</small></span>
+            <span><b aria-hidden="true">C</b><small data-ui="crustaceans">Crustáceos</small></span>
+            <span><b aria-hidden="true">H</b><small data-ui="egg">Huevo</small></span>
+            <span><b aria-hidden="true">P</b><small data-ui="fish">Pescado</small></span>
+            <span><b aria-hidden="true">L</b><small data-ui="dairy">Lácteos</small></span>
+            <span><b aria-hidden="true">F</b><small data-ui="nuts">Frutos de cáscara</small></span>
+            <span><b aria-hidden="true">S</b><small data-ui="sulphites">Sulfitos</small></span>
+            <span><b aria-hidden="true">M</b><small data-ui="molluscs">Moluscos</small></span>
           </div>
-        </address>
+        </section>
       </section>
+
+      </div>
     </main>
 
     <dialog class="dish-sheet" id="dish-dialog" aria-labelledby="dish-sheet-title">
@@ -318,12 +384,13 @@
     </dialog>
 
     <footer class="site-footer">
-      <p>Casa Paco · Cocina navarra en Pamplona</p>
+      <p data-ui="footer">Casa Paco · Cocina navarra en Pamplona</p>
       <a class="quiroz-signature" href="https://www.instagram.com/bryans_quiroz/" target="_blank" rel="noopener noreferrer" aria-label="Diseño y desarrollo web por QUIROZ, Instagram de Bryans Quiroz">
         <span>Diseño y desarrollo web por</span><strong>QUIROZ</strong>
       </a>
     </footer>
 
+    <script src="js/site-data.js" defer></script>
     <script src="js/carta-data.js" defer></script>
     <script src="js/carta.js" defer></script>
     <script src="js/script.js" defer></script>

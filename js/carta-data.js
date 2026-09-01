@@ -14,6 +14,10 @@
       { code: "fr", label: "FR", name: "Français" },
     ],
     ui: {
+      kicker: t("La carta", "À la carte", "La carte"),
+      title: t("La carta", "À la carte", "La carte"),
+      stamp: t("Desde Pamplona", "From Pamplona", "Depuis Pampelune"),
+      categoriesLabel: t("Categorías de la carta", "À la carte categories", "Catégories de la carte"),
       categoryLabel: t("Sección", "Section", "Section"),
       special: t("Especialidad Casa Paco", "Casa Paco speciality", "Spécialité Casa Paco"),
       recommended: t("Recomendado", "Recommended", "Recommandé"),
