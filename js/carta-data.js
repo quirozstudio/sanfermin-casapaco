@@ -1,10 +1,39 @@
 (function () {
   const t = (es, en, fr) => ({ es, en, fr });
   const allergenNotice = t(
-    "Alérgenos no especificados en la carta. Consulta siempre al personal antes de pedir.",
-    "Allergens are not specified on the menu. Always ask the team before ordering.",
-    "Allergènes non précisés sur la carte. Consultez toujours l’équipe avant de commander.",
+    "Alérgenos orientativos: confirma siempre con el personal antes de pedir.",
+    "Indicative allergens: always confirm with the team before ordering.",
+    "Allergènes indicatifs : confirmez toujours avec l’équipe avant de commander.",
   );
+  const allergen = (es, en, fr) => t(es, en, fr);
+  const allergenSets = {
+    none: allergen("Ninguno declarado", "None declared", "Aucun déclaré"),
+    gluten: allergen("Gluten", "Gluten", "Gluten"),
+    glutenFree: allergen("Sin gluten", "Gluten-free", "Sans gluten"),
+    glutenOption: allergen("Opción sin gluten", "Gluten-free option", "Option sans gluten"),
+    egg: allergen("Huevo", "Egg", "Œuf"),
+    dairy: allergen("Lácteos", "Dairy", "Produits laitiers"),
+    fish: allergen("Pescado", "Fish", "Poisson"),
+    molluscs: allergen("Moluscos", "Molluscs", "Mollusques"),
+    crustaceans: allergen("Crustáceos", "Crustaceans", "Crustacés"),
+    nuts: allergen("Frutos de cáscara", "Tree nuts", "Fruits à coque"),
+    sulphites: allergen("Sulfitos", "Sulphites", "Sulfites"),
+    glutenMolluscs: allergen("Gluten · Moluscos", "Gluten · Molluscs", "Gluten · Mollusques"),
+    glutenDairy: allergen("Gluten · Lácteos", "Gluten · Dairy", "Gluten · Produits laitiers"),
+    glutenEgg: allergen("Gluten · Huevo", "Gluten · Egg", "Gluten · Œuf"),
+    glutenEggDairy: allergen("Gluten · Huevo · Lácteos", "Gluten · Egg · Dairy", "Gluten · Œuf · Produits laitiers"),
+    glutenOptionEgg: allergen("Opción sin gluten · Huevo", "Gluten-free option · Egg", "Option sans gluten · Œuf"),
+    glutenOptionEggDairy: allergen("Opción sin gluten · Huevo · Lácteos", "Gluten-free option · Egg · Dairy", "Option sans gluten · Œuf · Produits laitiers"),
+    eggDairy: allergen("Huevo · Lácteos", "Egg · Dairy", "Œuf · Produits laitiers"),
+    eggDairyNuts: allergen("Huevo · Lácteos · Frutos de cáscara", "Egg · Dairy · Tree nuts", "Œuf · Produits laitiers · Fruits à coque"),
+    dairyNuts: allergen("Lácteos · Frutos de cáscara", "Dairy · Tree nuts", "Produits laitiers · Fruits à coque"),
+    fishEgg: allergen("Pescado · Huevo", "Fish · Egg", "Poisson · Œuf"),
+    glutenFishEgg: allergen("Gluten · Pescado · Huevo", "Gluten · Fish · Egg", "Gluten · Poisson · Œuf"),
+    fishGlutenFree: allergen("Pescado · Sin gluten", "Fish · Gluten-free", "Poisson · Sans gluten"),
+    glutenEggMolluscs: allergen("Gluten · Huevo · Moluscos", "Gluten · Egg · Molluscs", "Gluten · Œuf · Mollusques"),
+    glutenCrustaceansEgg: allergen("Gluten · Crustáceos · Huevo", "Gluten · Crustaceans · Egg", "Gluten · Crustacés · Œuf"),
+    glutenEggDairyFish: allergen("Gluten · Huevo · Lácteos · Pescado", "Gluten · Egg · Dairy · Fish", "Gluten · Œuf · Produits laitiers · Poisson"),
+  };
 
   window.cartaData = {
     defaultLanguage: "es",
@@ -14,6 +43,10 @@
       { code: "fr", label: "FR", name: "Français" },
     ],
     ui: {
+      kicker: t("La carta", "À la carte", "La carte"),
+      title: t("La carta", "À la carte", "La carte"),
+      stamp: t("Desde Pamplona", "From Pamplona", "Depuis Pampelune"),
+      categoriesLabel: t("Categorías de la carta", "À la carte categories", "Catégories de la carte"),
       categoryLabel: t("Sección", "Section", "Section"),
       special: t("Especialidad Casa Paco", "Casa Paco speciality", "Spécialité Casa Paco"),
       recommended: t("Recomendado", "Recommended", "Recommandé"),
@@ -73,23 +106,6 @@
             image: null,
           },
           {
-            id: "nachos",
-            name: t("Nachos", "Nachos", "Nachos"),
-            price: "11 €",
-            description: t(
-              "Con boloñesa, cheddar, pico de gallo, jalapeño y guacamole.",
-              "With Bolognese, cheddar, pico de gallo, jalapeño and guacamole.",
-              "Avec bolognaise, cheddar, pico de gallo, jalapeño et guacamole.",
-            ),
-            ingredients: t(
-              "Nachos · boloñesa · cheddar · pico de gallo · jalapeño · guacamole",
-              "Nachos · Bolognese · cheddar · pico de gallo · jalapeño · guacamole",
-              "Nachos · bolognaise · cheddar · pico de gallo · jalapeño · guacamole",
-            ),
-            allergens: allergenNotice,
-            image: null,
-          },
-          {
             id: "jamon-iberico",
             name: t("Jamón ibérico", "Iberian ham", "Jambon ibérique"),
             price: "20 €",
@@ -121,15 +137,6 @@
             price: "18 €",
             description: t("Con huevo a baja temperatura y patatas paja.", "With slow-cooked egg and shoestring potatoes.", "Avec œuf basse température et pommes paille."),
             ingredients: t("Bacalao · huevo · patatas paja", "Cod · egg · shoestring potatoes", "Morue · œuf · pommes paille"),
-            allergens: allergenNotice,
-            image: null,
-          },
-          {
-            id: "lechezuelas",
-            name: t("Lechezuelas encebolladas", "Sweetbreads with onion", "Ris de veau aux oignons"),
-            price: "22 €",
-            description: t("Encebolladas con patatas fritas caseras.", "With onion and homemade fries.", "Aux oignons avec frites maison."),
-            ingredients: t("Lechezuelas · cebolla · patatas", "Sweetbreads · onion · potatoes", "Ris de veau · oignon · pommes de terre"),
             allergens: allergenNotice,
             image: null,
           },
@@ -320,6 +327,11 @@
         number: "06",
         label: t("Bocadillos", "Sandwiches", "Sandwichs"),
         title: t("Bocadillos", "Sandwiches", "Sandwichs"),
+        note: t(
+          "Todos los bocadillos: opción de pan sin gluten.",
+          "All sandwiches: gluten-free bread option.",
+          "Tous les sandwiches : option de pain sans gluten.",
+        ),
         dishes: [
           {
             id: "bocadillo-tortilla",
@@ -469,4 +481,52 @@
       },
     ],
   };
+
+  // These are editorial working values until the kitchen validates each recipe.
+  const cartaAllergens = {
+    bravas: allergenSets.gluten,
+    "rabas-chipiron": allergenSets.glutenMolluscs,
+    chopitos: allergenSets.glutenMolluscs,
+    padron: allergenSets.gluten,
+    "jamon-iberico": allergenSets.glutenOption,
+    chistorra: allergenSets.glutenFree,
+    ajoarriero: allergenSets.glutenFishEgg,
+    callos: allergenSets.glutenFree,
+    "rabo-estofado": allergenSets.gluten,
+    manitas: allergenSets.glutenEgg,
+    entrecot: allergenSets.glutenOption,
+    "chipirones-pelayo": allergenSets.glutenMolluscs,
+    "pescado-fresco": allergenSets.fishGlutenFree,
+    "ensalada-mixta": allergenSets.egg,
+    "ensalada-chopitos": allergenSets.glutenEggMolluscs,
+    "ensalada-cabra": allergenSets.dairyNuts,
+    "huevos-foie": allergenSets.glutenOptionEggDairy,
+    "huevos-patatas": allergenSets.glutenOptionEgg,
+    "croqueta-jamon": allergenSets.glutenEggDairy,
+    "frito-jamon-queso": allergenSets.glutenDairy,
+    "frito-pimiento": allergenSets.gluten,
+    "frito-calamar": allergenSets.glutenMolluscs,
+    "frito-gamba": allergenSets.glutenCrustaceansEgg,
+    "bocadillo-tortilla": allergenSets.glutenEgg,
+    "bocadillo-verduras": allergenSets.glutenDairy,
+    "bocadillo-panceta": allergenSets.glutenDairy,
+    "bocadillo-pechuga": allergenSets.glutenEggDairy,
+    "bocadillo-lomo-panceta": allergenSets.glutenDairy,
+    "hamburguesa-mixta": allergenSets.glutenEggDairy,
+    "calamares-bravos": allergenSets.glutenEggMolluscs,
+    torrija: allergenSets.glutenEggDairy,
+    coulant: allergenSets.glutenEggDairy,
+    "cremoso-queso": allergenSets.glutenDairy,
+    cuajada: allergenSets.dairyNuts,
+    "queso-irati": allergenSets.dairyNuts,
+    "fruta-temporada": allergenSets.none,
+    "mix-helados": allergenSets.dairy,
+    "sorbete-dia": allergenSets.none,
+  };
+
+  window.cartaData.categories.forEach((category) => {
+    category.dishes.forEach((dish) => {
+      if (cartaAllergens[dish.id]) dish.allergens = cartaAllergens[dish.id];
+    });
+  });
 })();
