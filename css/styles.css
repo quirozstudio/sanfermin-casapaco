@@ -839,6 +839,8 @@ h1 em { color: var(--accent); font-weight: 500; text-transform: none; }
   scroll-margin-top: 190px;
 }
 
+.carta-category[hidden] { display: none; }
+
 .carta-category__header {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);

@@ -10,10 +10,9 @@
   const dialogClose = dialog.querySelector(".dish-sheet__close");
   const dialogImage = dialog.querySelector(".dish-sheet__image");
   const dialogMedia = dialog.querySelector(".dish-sheet__media");
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const dishIndex = new Map();
   let currentLanguage = readLanguage();
-  let activeObserver;
+  let activeCategoryId = categoryFromHash() || data.categories[0]?.id;
   let lastTrigger;
 
   data.categories.forEach((category) => {
@@ -34,6 +33,11 @@
     return value[currentLanguage] || value[data.defaultLanguage] || "";
   }
 
+  function categoryFromHash() {
+    const match = window.location.hash.match(/^#carta-(.+)$/);
+    return data.categories.some((category) => category.id === match?.[1]) ? match[1] : null;
+  }
+
   function createElement(tag, className, text) {
     const element = document.createElement(tag);
     if (className) element.className = className;
@@ -43,14 +47,19 @@
 
   function renderCategoryNav() {
     categoryNav.replaceChildren();
+    categoryNav.setAttribute("role", "tablist");
 
-    data.categories.forEach((category, index) => {
+    data.categories.forEach((category) => {
       const link = createElement("a", "carta-category-link", translated(category.label));
       link.href = `#carta-${category.id}`;
       link.dataset.categoryId = category.id;
-      if (index === 0) link.setAttribute("aria-current", "true");
+      link.id = `carta-tab-${category.id}`;
+      link.setAttribute("role", "tab");
+      link.setAttribute("aria-controls", `carta-${category.id}`);
       categoryNav.append(link);
     });
+
+    updateActiveCategory();
   }
 
   function createBadge(type) {
@@ -112,7 +121,8 @@
       const section = createElement("section", "carta-category");
       section.id = `carta-${category.id}`;
       section.dataset.categorySection = category.id;
-      section.setAttribute("aria-labelledby", `carta-${category.id}-title`);
+      section.setAttribute("role", "tabpanel");
+      section.setAttribute("aria-labelledby", `carta-tab-${category.id}`);
 
       const header = createElement("header", "carta-category__header");
       const number = createElement("span", "carta-category__number", category.number);
@@ -131,7 +141,36 @@
       menuRoot.append(section);
     });
 
-    observeCategories();
+    updateActiveCategory();
+  }
+
+  function updateActiveCategory() {
+    categoryNav.querySelectorAll("[data-category-id]").forEach((link) => {
+      const isActive = link.dataset.categoryId === activeCategoryId;
+      link.setAttribute("aria-selected", String(isActive));
+      link.tabIndex = isActive ? 0 : -1;
+      if (isActive) link.setAttribute("aria-current", "true");
+      else link.removeAttribute("aria-current");
+    });
+
+    menuRoot.querySelectorAll("[data-category-section]").forEach((section) => {
+      section.hidden = section.dataset.categorySection !== activeCategoryId;
+    });
+
+    const activeLink = categoryNav.querySelector(`[data-category-id="${activeCategoryId}"]`);
+    activeLink?.scrollIntoView({ behavior: "auto", block: "nearest", inline: "center" });
+  }
+
+  function selectCategory(categoryId, { updateHash = true, focus = false } = {}) {
+    if (!data.categories.some((category) => category.id === categoryId)) return;
+    activeCategoryId = categoryId;
+    updateActiveCategory();
+
+    const activeLink = categoryNav.querySelector(`[data-category-id="${categoryId}"]`);
+    if (focus) activeLink?.focus();
+    if (updateHash && window.location.hash !== `#carta-${categoryId}`) {
+      window.history.pushState(null, "", `#carta-${categoryId}`);
+    }
   }
 
   function updateStaticCopy() {
@@ -195,41 +234,33 @@
     else dialog.removeAttribute("open");
   }
 
-  function observeCategories() {
-    if (activeObserver) activeObserver.disconnect();
-    if (!("IntersectionObserver" in window)) return;
-
-    activeObserver = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (!visible) return;
-
-        const categoryId = visible.target.dataset.categorySection;
-        categoryNav.querySelectorAll("a").forEach((link) => {
-          const isActive = link.dataset.categoryId === categoryId;
-          if (isActive) link.setAttribute("aria-current", "true");
-          else link.removeAttribute("aria-current");
-        });
-
-        const activeLink = categoryNav.querySelector(`[data-category-id="${categoryId}"]`);
-        if (activeLink) {
-          const centeredLeft = activeLink.offsetLeft - (categoryNav.clientWidth - activeLink.offsetWidth) / 2;
-          categoryNav.scrollTo({
-            left: Math.max(0, centeredLeft),
-            behavior: reduceMotion ? "auto" : "smooth",
-          });
-        }
-      },
-      { rootMargin: "-38% 0px -50%", threshold: [0, 0.15, 0.35] },
-    );
-
-    menuRoot.querySelectorAll("[data-category-section]").forEach((section) => activeObserver.observe(section));
-  }
-
   window.addEventListener("casa-paco:languagechange", (event) => {
     setLanguage(event.detail.language);
+  });
+
+  window.addEventListener("popstate", () => {
+    const categoryId = categoryFromHash();
+    if (categoryId) selectCategory(categoryId, { updateHash: false });
+  });
+
+  categoryNav.addEventListener("click", (event) => {
+    const link = event.target.closest("[data-category-id]");
+    if (!link) return;
+    event.preventDefault();
+    selectCategory(link.dataset.categoryId);
+  });
+
+  categoryNav.addEventListener("keydown", (event) => {
+    if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+    event.preventDefault();
+    const categories = data.categories.map((category) => category.id);
+    const currentIndex = categories.indexOf(activeCategoryId);
+    let nextIndex = currentIndex;
+    if (event.key === "ArrowLeft") nextIndex = (currentIndex - 1 + categories.length) % categories.length;
+    if (event.key === "ArrowRight") nextIndex = (currentIndex + 1) % categories.length;
+    if (event.key === "Home") nextIndex = 0;
+    if (event.key === "End") nextIndex = categories.length - 1;
+    selectCategory(categories[nextIndex], { focus: true });
   });
 
   menuRoot.addEventListener("click", (event) => {
