@@ -19,10 +19,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <style>.intro-pending,.intro-pending body{overflow:hidden}.intro-pending .intro{position:fixed;inset:0;z-index:9998;display:grid;place-items:center;background:#263523;color:#fff}.intro-pending .intro__scene{display:grid;justify-items:center;gap:18px}.intro-pending .intro__logo{width:min(58vw,260px);aspect-ratio:1;border-radius:50%;overflow:hidden;border:5px solid #fff;box-shadow:0 24px 60px rgba(0,0,0,.28)}.intro-pending .intro__logo img{width:100%;height:100%;object-fit:cover}.intro-pending .intro__scene p{margin:0;font:700 .68rem Arial,sans-serif;letter-spacing:.22em}.intro-pending .intro button{position:fixed;right:22px;bottom:22px;border:0;background:none;color:#fff;text-decoration:underline}</style>
+    <script>document.documentElement.classList.add('js');try{if(!sessionStorage.getItem('cp-intro-v3')&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('intro-pending')}catch(e){}</script>
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
@@ -77,6 +79,7 @@
     </script>
   </head>
   <body>
+    <div class="intro" id="intro" role="dialog" aria-modal="true" aria-label="Presentación de Casa Paco"><div class="intro__scene"><span class="intro__rule" aria-hidden="true"></span><div class="intro__logo"><img src="img/logo-intro.webp" alt="" width="640" height="640"></div><p>GASTROBAR · PAMPLONA</p></div><button id="introSkip" type="button">Entrar</button></div>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
     <main id="contenido" class="experience-app">

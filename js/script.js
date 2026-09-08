@@ -1,4 +1,31 @@
 (function () {
+  const root = document.documentElement;
+  const intro = document.querySelector("#intro");
+  if (intro && root.classList.contains("intro-pending")) {
+    let done = false;
+    const close = () => {
+      if (done) return;
+      done = true;
+      intro.setAttribute("aria-hidden", "true");
+      intro.classList.add("is-leaving");
+      try {
+        sessionStorage.setItem("cp-intro-v3", "1");
+      } catch (error) {}
+      setTimeout(() => {
+        root.classList.remove("intro-pending");
+        intro.remove();
+      }, 450);
+    };
+    document.querySelector("#introSkip")?.addEventListener("click", close);
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") close();
+    }, { once: true });
+    setTimeout(close, 1950);
+  } else {
+    root.classList.remove("intro-pending");
+    intro?.remove();
+  }
+
   document.documentElement.classList.add("has-js");
 
   const data = window.siteData;
