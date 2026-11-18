@@ -141,6 +141,7 @@
     if (!data.languages.includes(language)) return;
     currentLanguage = language;
     document.documentElement.lang = language;
+    document.body.dataset.language = language;
     persistLanguage(language);
     updateInterfaceCopy();
     updateMenu("menu-del-dia");

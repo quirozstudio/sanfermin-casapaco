@@ -2319,3 +2319,61 @@ body.dish-sheet-open { overflow: hidden; }
   }
   .has-js .reveal { opacity: 1; transform: none; }
 }
+
+/* Arte final del QR: en español se muestra la pieza aprobada para conservar
+   exactamente la composición, tipografía e iconografía del menú impreso. */
+.menu-poster {
+  display: none;
+  position: relative;
+  margin: 0;
+}
+
+.menu-poster figcaption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+body[data-language="es"] .menu-poster {
+  display: block;
+  opacity: 1;
+  transform: none;
+}
+
+body[data-language="es"] .menu-native {
+  display: none !important;
+}
+
+body[data-language="es"] #menu-del-dia,
+body[data-language="es"] #menu-fin-de-semana {
+  width: min(100%, 1024px);
+  margin: clamp(16px, 3vw, 32px) auto;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 2px;
+  background: #f7efe4;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
+body[data-language="es"] .menu-poster img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+
+@media (max-width: 819px) {
+  body[data-language="es"] #menu-del-dia,
+  body[data-language="es"] #menu-fin-de-semana {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
