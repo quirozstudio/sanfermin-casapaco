@@ -2377,3 +2377,310 @@ body[data-language="es"] .menu-poster img {
     box-shadow: none;
   }
 }
+
+/* Menús HTML: composición editorial inspirada en las piezas del QR. */
+body[data-language="es"] header.menu-native { display: grid !important; }
+body[data-language="es"] div.menu-native { display: grid !important; }
+body[data-language="es"] aside.menu-native { display: grid !important; }
+body[data-language="es"] section.menu-native { display: block !important; }
+
+body[data-language="es"] #menu-del-dia,
+body[data-language="es"] #menu-fin-de-semana {
+  width: min(calc(100% - 16px), 1280px);
+  margin: clamp(14px, 3vw, 38px) auto;
+  padding: clamp(34px, 7vw, 76px) clamp(18px, 5vw, 72px) clamp(28px, 6vw, 64px);
+  overflow: hidden;
+  border: 1px solid rgba(61, 74, 38, 0.32);
+  border-radius: clamp(8px, 2vw, 18px);
+  background:
+    radial-gradient(circle at 18% 8%, rgba(255, 255, 255, 0.56), transparent 24rem),
+    radial-gradient(circle at 88% 88%, rgba(168, 129, 53, 0.08), transparent 26rem),
+    #f5ecdd;
+  box-shadow: 0 32px 90px rgba(63, 43, 23, 0.2);
+}
+
+body[data-language="es"] #menu-del-dia .menu-heading,
+body[data-language="es"] #menu-fin-de-semana .menu-heading {
+  gap: 12px;
+  padding-bottom: clamp(34px, 6vw, 64px);
+}
+
+body[data-language="es"] .daily-menu-brand__seal,
+body[data-language="es"] .weekend-menu-brand__seal {
+  border: 1px solid currentColor;
+  background: #f9f2e6;
+  color: #171913;
+  box-shadow: none;
+}
+
+body[data-language="es"] .menu-heading h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.045em;
+}
+
+body[data-language="es"] #menu-del-dia .menu-heading h2 {
+  color: #7d1f24;
+}
+
+body[data-language="es"] #menu-del-dia .menu-price {
+  color: #a86f18;
+}
+
+body[data-language="es"] #menu-del-dia .menu-inclusions,
+body[data-language="es"] #menu-fin-de-semana .menu-inclusions {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  width: 100%;
+  margin-top: 10px;
+  border-top: 1px solid rgba(38, 48, 28, 0.26);
+  border-bottom: 1px solid rgba(38, 48, 28, 0.26);
+}
+
+.menu-inclusions span {
+  display: grid;
+  min-height: 76px;
+  align-content: center;
+  justify-items: center;
+  gap: 3px;
+  padding: 8px 5px;
+  border-right: 1px solid rgba(38, 48, 28, 0.22);
+  color: #26291f;
+  font-size: clamp(0.55rem, 1.5vw, 0.72rem);
+  font-weight: 800;
+  line-height: 1.15;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.menu-inclusions span:last-child { border-right: 0; }
+.menu-inclusions b { color: #7d1f24; font-size: 1.55rem; line-height: 1; }
+.menu-inclusions small { font-size: 0.46rem; font-weight: 700; text-transform: none; }
+
+body[data-language="es"] #menu-del-dia .course-title,
+body[data-language="es"] #menu-fin-de-semana .course-title {
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 4px;
+  margin-bottom: 12px;
+  padding-bottom: 9px;
+}
+
+body[data-language="es"] #menu-del-dia .course-title::before,
+body[data-language="es"] #menu-del-dia .course-title::after,
+body[data-language="es"] #menu-fin-de-semana .course-title::before,
+body[data-language="es"] #menu-fin-de-semana .course-title::after {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #9a7532 22%, #9a7532 78%, transparent);
+}
+
+body[data-language="es"] #menu-del-dia .course-title span,
+body[data-language="es"] #menu-fin-de-semana .course-title span { display: none; }
+
+body[data-language="es"] #menu-del-dia .course-title h3,
+body[data-language="es"] #menu-fin-de-semana .course-title h3 {
+  grid-column: 1 / -1;
+  justify-self: center;
+  min-width: min(100%, 300px);
+  padding: 0 20px;
+  clip-path: none;
+  background: transparent;
+  color: #314526;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.9rem, 6vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1;
+}
+
+body[data-language="es"] #menu-del-dia .course:nth-child(2) .course-title h3,
+body[data-language="es"] #menu-del-dia .course:nth-child(3) .course-title h3 { color: #7d1f24; background: transparent; }
+
+body[data-language="es"] #menu-fin-de-semana .course-title h3 {
+  min-width: min(100%, 320px);
+  padding: 9px 30px 8px;
+  border: 1px solid rgba(49, 69, 38, 0.42);
+  border-radius: 18px;
+  background: #eff0d6;
+  color: #314526;
+}
+
+body[data-language="es"] #menu-fin-de-semana .course:nth-child(2) .course-title h3 { background: #eff0d6; color: #314526; }
+
+body[data-language="es"] #menu-del-dia .dish-list li,
+body[data-language="es"] #menu-fin-de-semana .dish-list li {
+  padding: 15px 0;
+  border-bottom: 1px dotted rgba(65, 75, 48, 0.36);
+}
+
+body[data-language="es"] #menu-del-dia .dish-list strong,
+body[data-language="es"] #menu-fin-de-semana .dish-list strong {
+  color: #1c2419;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.2rem, 3.4vw, 1.55rem);
+  font-weight: 700;
+}
+
+body[data-language="es"] #menu-del-dia .menu-dish-description,
+body[data-language="es"] #menu-fin-de-semana .menu-dish-description {
+  padding-left: 0;
+  color: #554e43;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(0.92rem, 2.6vw, 1.08rem);
+  line-height: 1.16;
+}
+
+body[data-language="es"] #menu-del-dia .menu-dish-description::before,
+body[data-language="es"] #menu-fin-de-semana .menu-dish-description::before { display: none; }
+
+body[data-language="es"] #menu-del-dia .dish-list small,
+body[data-language="es"] #menu-fin-de-semana .dish-list small {
+  align-items: center;
+  min-height: 28px;
+  gap: 5px;
+  color: #273922;
+  font-size: 0.52rem;
+}
+
+body[data-language="es"] #menu-del-dia .dish-list small span,
+body[data-language="es"] #menu-fin-de-semana .dish-list small span {
+  display: inline-grid;
+  width: 28px;
+  height: 28px;
+  min-height: 28px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--allergen-color, #49513e);
+  color: transparent;
+  font-size: 0;
+}
+
+body[data-language="es"] #menu-del-dia .dish-list small span::before,
+body[data-language="es"] #menu-fin-de-semana .dish-list small span::before {
+  color: #fffaf0;
+  content: attr(data-allergen);
+  font-family: Inter, sans-serif;
+  font-size: 0.53rem;
+  font-weight: 900;
+}
+
+body[data-language="es"] #menu-del-dia .dish-list small span[data-allergen="gluten"],
+body[data-language="es"] #menu-fin-de-semana .dish-list small span[data-allergen="gluten"] { --allergen-color: #ee8618; }
+body[data-language="es"] #menu-del-dia .dish-list small span[data-allergen="crustaceans"],
+body[data-language="es"] #menu-fin-de-semana .dish-list small span[data-allergen="crustaceans"] { --allergen-color: #d72a2d; }
+body[data-language="es"] #menu-del-dia .dish-list small span[data-allergen="egg"],
+body[data-language="es"] #menu-fin-de-semana .dish-list small span[data-allergen="egg"] { --allergen-color: #efb326; }
+body[data-language="es"] #menu-del-dia .dish-list small span[data-allergen="fish"],
+body[data-language="es"] #menu-fin-de-semana .dish-list small span[data-allergen="fish"] { --allergen-color: #1f83d8; }
+body[data-language="es"] #menu-del-dia .dish-list small span[data-allergen="dairy"],
+body[data-language="es"] #menu-fin-de-semana .dish-list small span[data-allergen="dairy"] { --allergen-color: #2588db; }
+body[data-language="es"] #menu-del-dia .dish-list small span[data-allergen="nuts"],
+body[data-language="es"] #menu-fin-de-semana .dish-list small span[data-allergen="nuts"] { --allergen-color: #704327; }
+body[data-language="es"] #menu-del-dia .dish-list small span[data-allergen="sulphites"],
+body[data-language="es"] #menu-fin-de-semana .dish-list small span[data-allergen="sulphites"] { --allergen-color: #7137c5; }
+
+body[data-language="es"] #menu-del-dia .dish-list small span.allergen-token--option,
+body[data-language="es"] #menu-fin-de-semana .dish-list small span.allergen-token--option {
+  width: auto;
+  min-width: 104px;
+  height: auto;
+  padding: 4px 8px;
+  border: 1px solid #3d642a;
+  border-radius: 4px;
+  background: #eff4d7;
+  color: #1d351d;
+  font-size: 0.54rem;
+  letter-spacing: 0.02em;
+}
+
+body[data-language="es"] #menu-del-dia .dish-list small span.allergen-token--option::before,
+body[data-language="es"] #menu-fin-de-semana .dish-list small span.allergen-token--option::before { content: "✓"; color: #3d642a; font-size: 0.65rem; margin-right: 3px; }
+
+body[data-language="es"] #menu-del-dia .dish-featured,
+body[data-language="es"] #menu-fin-de-semana .dish-featured {
+  border: 1px solid #3d642a;
+  border-radius: 7px;
+  background: rgba(206, 181, 92, 0.1);
+}
+
+body[data-language="es"] #menu-del-dia .dish-featured > span,
+body[data-language="es"] #menu-fin-de-semana .dish-featured > span { color: #a36a17; font-size: 0.78rem; font-weight: 900; }
+
+body[data-language="es"] .daily-service-strip,
+body[data-language="es"] .weekend-service-strip {
+  border-color: rgba(49, 69, 38, 0.55);
+  border-radius: 10px;
+  background: rgba(255, 249, 236, 0.45);
+}
+
+body[data-language="es"] .daily-service-strip strong,
+body[data-language="es"] .weekend-service-strip strong,
+body[data-language="es"] .daily-allergen-legend small,
+body[data-language="es"] .weekend-allergen-legend small { color: #202a1c; }
+
+body[data-language="es"] .daily-allergen-legend,
+body[data-language="es"] .weekend-allergen-legend { border-top-color: #8b672a; }
+
+body[data-language="es"] .daily-allergen-legend h3,
+body[data-language="es"] .weekend-allergen-legend h3 { color: #7d1f24; font-family: "Cormorant Garamond", Georgia, serif; }
+
+body[data-language="es"] .daily-allergen-grid b,
+body[data-language="es"] .weekend-allergen-grid b { background: #344b2d; border-color: #344b2d; }
+
+/* La versión de fin de semana comparte la base marfil, con el verde oliva y
+   el dorado de la pieza impresa. */
+body[data-language="es"] .experience-view--weekend {
+  --weekend-paper: #f5ecdd;
+  --weekend-paper-soft: #fbf5e8;
+  --weekend-ink: #1c2618;
+  --weekend-muted: #554e43;
+  --weekend-copper: #b58b31;
+  --weekend-copper-light: #314526;
+  --weekend-line: rgba(49, 69, 38, 0.32);
+  background: #d9cbb5;
+  color: var(--weekend-ink);
+}
+
+body[data-language="es"] .experience-toolbar--weekend {
+  border-color: rgba(49, 69, 38, 0.22);
+  background: rgba(245, 236, 221, 0.96);
+  color: var(--weekend-ink);
+}
+
+body[data-language="es"] .experience-toolbar--weekend .experience-switcher a[aria-current="page"] { background: #314526; color: #f8f0e3; }
+body[data-language="es"] .experience-toolbar--weekend .language-switcher button.is-active { background: #a9431e; color: #f8f0e3; }
+body[data-language="es"] #menu-fin-de-semana .menu-heading h2 { color: #314526; }
+body[data-language="es"] #menu-fin-de-semana .menu-price { color: #a36a17; }
+body[data-language="es"] #menu-fin-de-semana .menu-inclusions b { color: #314526; }
+
+body[data-language="es"] .menu-poster--details {
+  display: block;
+  position: relative;
+  margin-top: clamp(34px, 6vw, 58px);
+  padding-top: 20px;
+  border-top: 1px solid rgba(49, 69, 38, 0.28);
+  background: transparent;
+  box-shadow: none;
+}
+
+.menu-poster--details summary {
+  cursor: pointer;
+  color: #7d1f24;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.menu-poster--details figure { margin: 24px auto 0; }
+.menu-poster--details img { width: min(100%, 760px); margin: 0 auto; border: 1px solid rgba(49, 69, 38, 0.24); }
+.menu-poster--details[open] summary { margin-bottom: 6px; }
+
+@media (max-width: 700px) {
+  body[data-language="es"] #menu-del-dia .menu-inclusions,
+  body[data-language="es"] #menu-fin-de-semana .menu-inclusions { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .menu-inclusions span:nth-child(3) { border-right: 0; }
+  .menu-inclusions span:nth-child(n + 4) { border-top: 1px solid rgba(38, 48, 28, 0.22); }
+}

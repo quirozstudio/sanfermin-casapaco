@@ -7,6 +7,12 @@
   });
 
   const allergens = {
+    gluten: t("Gluten", "Gluten", "Gluten"),
+    glutenFree: t("Sin gluten", "Gluten-free", "Sans gluten"),
+    crustaceans: t("Crustáceos", "Crustaceans", "Crustacés"),
+    fishCrustaceans: t("Pescado · Crustáceos", "Fish · Crustaceans", "Poisson · Crustacés"),
+    glutenCrustaceans: t("Gluten · Crustáceos", "Gluten · Crustaceans", "Gluten · Crustacés"),
+    glutenDairyNutsSulphites: t("Gluten · Lácteos · Frutos de cáscara · Sulfitos", "Gluten · Dairy · Tree nuts · Sulphites", "Gluten · Produits laitiers · Fruits à coque · Sulfites"),
     glutenFreeMolluscsSulphites: t(
       "Sin gluten · Moluscos · Sulfitos",
       "Gluten-free · Molluscs · Sulphites",
@@ -306,6 +312,96 @@
       "A layered Basque-Navarre dessert with cream, sponge cake and caramelised custard.",
       "Dessert basco-navarrais en couches, composé de crème, génoise et crème pâtissière caramélisée.",
     )],
+    ["Ensalada de brie crujiente", t(
+      "Con reducción de frutos rojos y nueces.",
+      "With red berry reduction and walnuts.",
+      "Avec réduction de fruits rouges et noix.",
+    )],
+    ["Verduras de temporada", t(
+      "Selección de verduras de temporada.",
+      "A selection of seasonal vegetables.",
+      "Sélection de légumes de saison.",
+    )],
+    ["Alubias rojas", t(
+      "Con sacramentos y piparras.",
+      "With traditional pork garnishes and piparras.",
+      "Avec garniture traditionnelle et piparras.",
+    )],
+    ["Crema de marisco", t(
+      "Con langostino crujiente.",
+      "With crispy prawn.",
+      "Avec crevette croustillante.",
+    )],
+    ["Arroz a la marinera", t(
+      "Con gambas.",
+      "With prawns.",
+      "Avec crevettes.",
+    )],
+    ["Pimientos rellenos de carne picada", t(
+      "Con salsa de piquillos y patatas panaderas.",
+      "With piquillo sauce and baked potatoes.",
+      "Avec sauce piquillo et pommes de terre boulangères.",
+    )],
+    ["Guiso de carrillera ibérica", t(
+      "Con patatas fritas.",
+      "With fries.",
+      "Avec frites.",
+    )],
+    ["Pimientos rellenos de carne", t(
+      "Con salsa de piquillos y patatas panaderas.",
+      "With piquillo sauce and baked potatoes.",
+      "Avec sauce piquillo et pommes de terre boulangères.",
+    )],
+    ["Entrecot", t(
+      "Con piquillos y patatas fritas caseras.",
+      "With piquillo peppers and homemade fries.",
+      "Avec poivrons piquillo et frites maison.",
+    )],
+    ["Ajoarriero", t(
+      "Con huevo a baja temperatura y patata paja.",
+      "With slow-cooked egg and straw potatoes.",
+      "Avec œuf basse température et pommes paille.",
+    )],
+    ["Ajoarriero tradicional", t(
+      "Con huevo a baja temperatura y patata paja.",
+      "With slow-cooked egg and straw potatoes.",
+      "Avec œuf basse température et pommes paille.",
+    )],
+    ["Pescado fresco del día", t(
+      "Con patatas panaderas o ensalada.",
+      "With baked potatoes or salad.",
+      "Avec pommes de terre boulangères ou salade.",
+    )],
+    ["Coulant de chocolate blanco", t(
+      "Con helado de vainilla.",
+      "With vanilla ice cream.",
+      "Avec glace à la vanille.",
+    )],
+    ["Cremoso de queso", t(
+      "Con lluvia de Lotus y frutos rojos.",
+      "With Lotus biscuit and red berries.",
+      "Avec biscuit Lotus et fruits rouges.",
+    )],
+    ["Pantxineta", t(
+      "Con helado de vainilla y sirope de chocolate negro.",
+      "With vanilla ice cream and dark chocolate syrup.",
+      "Avec glace à la vanille et sirop de chocolat noir.",
+    )],
+    ["Pantxineta tradicional", t(
+      "Con helado de vainilla y sirope de chocolate negro.",
+      "With vanilla ice cream and dark chocolate syrup.",
+      "Avec glace à la vanille et sirop de chocolat noir.",
+    )],
+    ["Tiramisú al estilo Casa Paco", t(
+      "Receta cremosa de la casa.",
+      "Casa Paco's creamy house recipe.",
+      "La recette crémeuse de la maison.",
+    )],
+    ["Lasaña casera a la boloñesa", t(
+      "Con base de tomate y emulsión de albahaca.",
+      "With tomato base and basil emulsion.",
+      "Avec base de tomate et émulsion de basilic.",
+    )],
   ]);
 
   window.siteData = {
@@ -370,9 +466,39 @@
           "Comprend pain, vin de l’année, cidre, boisson sans alcool, petite bière ou eau.",
         ),
         courses: [
-          { title: t("Primeros", "Starters", "Entrées"), dishes: [shared.pochas, shared.vegetables, shared.ensaladilla, shared.pasta, shared.risotto, shared.gazpacho] },
-          { title: t("Segundos", "Main courses", "Plats"), dishes: [shared.oxtail, shared.trotters, shared.ajoarriero, shared.peppers, shared.fish, shared.entrecote] },
-          { title: t("Postres", "Desserts", "Desserts"), dishes: [shared.cheesecake, shared.cuajada, shared.torrija, shared.irati, shared.brownie, shared.sorbet] },
+          {
+            title: t("Primeros", "Starters", "Entrées"),
+            dishes: [
+              dish("Ensalada de brie crujiente", "Crispy brie salad", "Salade de brie croustillant", "Gluten · Huevo · Lácteos · Frutos de cáscara · Sulfitos", "Gluten · Egg · Dairy · Tree nuts · Sulphites", "Gluten · Œuf · Produits laitiers · Fruits à coque · Sulfites"),
+              dish("Verduras de temporada", "Seasonal vegetables", "Légumes de saison", allergens.glutenFree.es, allergens.glutenFree.en, allergens.glutenFree.fr),
+              dish("Alubias rojas", "Red beans", "Haricots rouges", allergens.glutenFree.es, allergens.glutenFree.en, allergens.glutenFree.fr),
+              dish("Crema de marisco", "Seafood cream soup", "Crème de fruits de mer", allergens.glutenCrustaceans.es, allergens.glutenCrustaceans.en, allergens.glutenCrustaceans.fr),
+              dish("Arroz a la marinera", "Seafood rice", "Riz aux fruits de mer", allergens.fishCrustaceans.es, allergens.fishCrustaceans.en, allergens.fishCrustaceans.fr),
+              dish("Pasta del día", "Pasta of the day", "Pâtes du jour", allergens.glutenEggDairy.es, allergens.glutenEggDairy.en, allergens.glutenEggDairy.fr),
+            ],
+          },
+          {
+            title: t("Segundos", "Main courses", "Plats"),
+            dishes: [
+              dish("Entrecot", "Entrecôte", "Entrecôte", allergens.glutenFree.es, allergens.glutenFree.en, allergens.glutenFree.fr, t("Suplemento +7 €", "Supplement +€7", "Supplément +7 €")),
+              dish("Rabo al estilo tradicional", "Traditional oxtail", "Queue de bœuf traditionnelle", allergens.glutenFreeSulphites.es, allergens.glutenFreeSulphites.en, allergens.glutenFreeSulphites.fr),
+              dish("Manitas deshuesadas crujientes", "Crispy boneless pig's trotters", "Pieds de porc désossés et croustillants", allergens.gluten.es, allergens.gluten.en, allergens.gluten.fr),
+              dish("Ajoarriero", "Ajoarriero cod", "Morue ajoarriero", allergens.fishEggSulphites.es, allergens.fishEggSulphites.en, allergens.fishEggSulphites.fr),
+              dish("Pescado fresco del día", "Fresh fish of the day", "Poisson frais du jour", allergens.fish.es, allergens.fish.en, allergens.fish.fr),
+              dish("Pimientos rellenos de carne picada", "Peppers stuffed with minced meat", "Poivrons farcis à la viande hachée", allergens.glutenEggDairy.es, allergens.glutenEggDairy.en, allergens.glutenEggDairy.fr),
+            ],
+          },
+          {
+            title: t("Postres", "Desserts", "Desserts"),
+            dishes: [
+              dish("Torrija con helado de galleta", "French toast with biscuit ice cream", "Pain perdu avec glace au biscuit", allergens.glutenEggDairy.es, allergens.glutenEggDairy.en, allergens.glutenEggDairy.fr),
+              dish("Queso de Irati con membrillo y nueces", "Irati cheese with quince paste and walnuts", "Fromage d’Irati, pâte de coing et noix", allergens.dairyNuts.es, allergens.dairyNuts.en, allergens.dairyNuts.fr),
+              dish("Cuajada de Ultzama con miel y nueces", "Ultzama curd with honey and walnuts", "Caillé d’Ultzama au miel et aux noix", allergens.dairyNuts.es, allergens.dairyNuts.en, allergens.dairyNuts.fr),
+              dish("Coulant de chocolate blanco", "White chocolate fondant", "Coulant au chocolat blanc", allergens.glutenEggDairy.es, allergens.glutenEggDairy.en, allergens.glutenEggDairy.fr),
+              dish("Cremoso de queso", "Creamy cheesecake", "Crémeux au fromage", allergens.glutenDairyNutsSulphites.es, allergens.glutenDairyNutsSulphites.en, allergens.glutenDairyNutsSulphites.fr),
+              dish("Pantxineta", "Pantxineta", "Pantxineta", allergens.glutenEggDairyNuts.es, allergens.glutenEggDairyNuts.en, allergens.glutenEggDairyNuts.fr),
+            ],
+          },
         ],
       },
       "menu-fin-de-semana": {
@@ -387,37 +513,37 @@
           {
             title: t("Primeros", "Starters", "Entrées"),
             dishes: [
-              shared.pochas,
-              shared.vegetables,
-              shared.ensaladilla,
-              shared.pasta,
-              dish("Crepe de boletus con salsa trufada", "Boletus crêpe with truffle sauce", "Crêpe aux cèpes, sauce truffée", allergens.glutenDairy.es, allergens.glutenDairy.en, allergens.glutenDairy.fr),
-              shared.risotto,
-              shared.gazpacho,
+              dish("Ensalada de brie crujiente", "Crispy brie salad", "Salade de brie croustillant", "Gluten · Huevo · Lácteos · Frutos de cáscara · Sulfitos", "Gluten · Egg · Dairy · Tree nuts · Sulphites", "Gluten · Œuf · Produits laitiers · Fruits à coque · Sulfites"),
+              dish("Verduras de temporada", "Seasonal vegetables", "Légumes de saison", allergens.glutenFree.es, allergens.glutenFree.en, allergens.glutenFree.fr),
+              dish("Alubias rojas", "Red beans", "Haricots rouges", allergens.glutenFree.es, allergens.glutenFree.en, allergens.glutenFree.fr),
+              dish("Crema de marisco", "Seafood cream soup", "Crème de fruits de mer", allergens.glutenCrustaceans.es, allergens.glutenCrustaceans.en, allergens.glutenCrustaceans.fr),
+              dish("Arroz a la marinera", "Seafood rice", "Riz aux fruits de mer", allergens.fishCrustaceans.es, allergens.fishCrustaceans.en, allergens.fishCrustaceans.fr),
+              dish("Pasta del día", "Pasta of the day", "Pâtes du jour", allergens.glutenEggDairy.es, allergens.glutenEggDairy.en, allergens.glutenEggDairy.fr),
+              dish("Lasaña casera a la boloñesa", "Homemade Bolognese lasagne", "Lasagnes bolognaises maison", allergens.glutenEggDairy.es, allergens.glutenEggDairy.en, allergens.glutenEggDairy.fr),
             ],
           },
           {
             title: t("Segundos", "Main courses", "Plats"),
             dishes: [
-              shared.oxtail,
-              shared.trotters,
-              shared.ajoarriero,
-              shared.peppers,
-              shared.fish,
-              dish("Callos estilo navarro", "Navarre-style tripe", "Tripes à la navarraise", allergens.glutenFreeSulphites.es, allergens.glutenFreeSulphites.en, allergens.glutenFreeSulphites.fr),
-              shared.entrecote,
+              dish("Guiso de carrillera ibérica", "Iberian cheek stew", "Joue de porc ibérique mijotée", allergens.glutenFreeSulphites.es, allergens.glutenFreeSulphites.en, allergens.glutenFreeSulphites.fr),
+              dish("Rabo al estilo tradicional", "Traditional oxtail", "Queue de bœuf traditionnelle", allergens.glutenFreeSulphites.es, allergens.glutenFreeSulphites.en, allergens.glutenFreeSulphites.fr),
+              dish("Manitas deshuesadas crujientes", "Crispy boneless pig's trotters", "Pieds de porc désossés et croustillants", allergens.glutenFree.es, allergens.glutenFree.en, allergens.glutenFree.fr),
+              dish("Pimientos rellenos de carne", "Peppers stuffed with meat", "Poivrons farcis à la viande", allergens.glutenEggDairy.es, allergens.glutenEggDairy.en, allergens.glutenEggDairy.fr),
+              dish("Entrecot", "Entrecôte", "Entrecôte", allergens.glutenFree.es, allergens.glutenFree.en, allergens.glutenFree.fr, t("Suplemento +7 €", "Supplement +€7", "Supplément +7 €")),
+              dish("Ajoarriero tradicional", "Traditional ajoarriero cod", "Morue ajoarriero traditionnelle", allergens.fishEggSulphites.es, allergens.fishEggSulphites.en, allergens.fishEggSulphites.fr),
+              dish("Pescado fresco del día", "Fresh fish of the day", "Poisson frais du jour", allergens.fish.es, allergens.fish.en, allergens.fish.fr),
             ],
           },
           {
             title: t("Postres", "Desserts", "Desserts"),
             dishes: [
-              dish("Cremoso de queso con Lotus y frutos rojos", "Creamy cheesecake with Lotus biscuit and red berries", "Crémeux au fromage, biscuit Lotus et fruits rouges", allergens.glutenEggDairy.es, allergens.glutenEggDairy.en, allergens.glutenEggDairy.fr),
-              shared.cuajada,
-              shared.torrija,
-              shared.irati,
-              shared.brownie,
-              shared.sorbet,
-              dish("Goxua caramelizada casera", "Homemade caramelised goxua", "Goxua maison caramélisé", allergens.glutenEggDairy.es, allergens.glutenEggDairy.en, allergens.glutenEggDairy.fr),
+              dish("Cuajada de Ultzama con miel y nueces", "Ultzama curd with honey and walnuts", "Caillé d’Ultzama au miel et aux noix", allergens.dairyNuts.es, allergens.dairyNuts.en, allergens.dairyNuts.fr),
+              dish("Queso de Irati con membrillo y nueces", "Irati cheese with quince paste and walnuts", "Fromage d’Irati, pâte de coing et noix", allergens.dairyNuts.es, allergens.dairyNuts.en, allergens.dairyNuts.fr),
+              dish("Torrija casera", "Homemade French toast", "Pain perdu maison", allergens.glutenEggDairy.es, allergens.glutenEggDairy.en, allergens.glutenEggDairy.fr),
+              dish("Pantxineta tradicional", "Traditional pantxineta", "Pantxineta traditionnelle", allergens.glutenEggDairyNuts.es, allergens.glutenEggDairyNuts.en, allergens.glutenEggDairyNuts.fr),
+              dish("Tiramisú al estilo Casa Paco", "Casa Paco tiramisu", "Tiramisu Casa Paco", allergens.glutenEggDairy.es, allergens.glutenEggDairy.en, allergens.glutenEggDairy.fr),
+              dish("Cremoso de queso", "Creamy cheesecake", "Crémeux au fromage", allergens.glutenDairyNutsSulphites.es, allergens.glutenDairyNutsSulphites.en, allergens.glutenDairyNutsSulphites.fr),
+              dish("Coulant de chocolate blanco", "White chocolate fondant", "Coulant au chocolat blanc", allergens.glutenEggDairy.es, allergens.glutenEggDairy.en, allergens.glutenEggDairy.fr),
             ],
           },
         ],

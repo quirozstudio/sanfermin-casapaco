@@ -114,11 +114,27 @@
           allergenElement.setAttribute("aria-label", allergenText);
           const tokens = allergenText.split(" · ").map((label) => {
             const token = document.createElement("span");
+            token.classList.add("allergen-token");
             token.textContent = label;
             token.setAttribute("aria-hidden", "true");
             if (/^(sin gluten|opción sin gluten|gluten-free|option sans gluten)/i.test(label)) {
               token.classList.add("allergen-token--option");
             }
+            const normalizedLabel = label.toLowerCase();
+            const tokenType = /crustáceos|crustaceans|crustacés/.test(normalizedLabel)
+              ? "crustaceans"
+              : /pescado|fish|poisson/.test(normalizedLabel)
+                ? "fish"
+                : /huevo|egg|œuf/.test(normalizedLabel)
+                  ? "egg"
+                  : /lácteos|dairy|produits laitiers/.test(normalizedLabel)
+                    ? "dairy"
+                    : /frutos de cáscara|tree nuts|fruits à coque/.test(normalizedLabel)
+                      ? "nuts"
+                      : /sulfitos|sulphites|sulfites/.test(normalizedLabel)
+                        ? "sulphites"
+                        : "gluten";
+            token.dataset.allergen = tokenType;
             return token;
           });
           allergenElement.replaceChildren(...tokens);
